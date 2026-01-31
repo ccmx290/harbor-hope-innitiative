@@ -63,15 +63,73 @@ p {
 /* ====================
     Links
 ==================== */
-
-/* Make links stand out from regular text */
+/* Color for all links prior to being interacted with; sets text-decoration to "none" so it can be purposefully reapplied later to only specific links */
 a {
     color: #0066cc;
     text-decoration: none;
 }
 
 a:hover {
+    color: #003569; 
+}
+
+a:hover
+ {
     text-decoration: underline;
+}
+
+a:active {
+    color: #021529;
+}
+
+/* Styles applied when focusing on a link by tabbing to it, but not by clicking with a mouse */
+a:focus-visible {
+    color: #003569;
+    outline: 2px solid #003569;
+    background-color: #d7e7f7;   
+}
+
+/* Makes nav links and button-like elements bolder so they stand out from other links */
+nav a,
+.hero a,
+.btn-outline {
+    font-weight: bold;
+}
+
+/* Adds underline to make links more identifiable beyond just being blue text */
+.hero a, 
+.btn-outline,
+.skip-link,
+.text-link {
+    text-decoration: underline;
+}
+
+
+/* Removes underline when focusing with keyboard to maintain visual consistency */
+.hero a:focus-visible,
+.btn-outline:focus-visible,
+.text-link:focus-visible {
+    text-decoration: none;
+}
+
+
+/* ====================
+    Form Fields & Button
+==================== */
+/* Styles for when hovering over or focusing on form items with a keyboard/mouse */
+input:hover,
+input:focus, 
+textarea:hover,
+textarea:focus {
+    outline: 2px solid #003569;
+}
+
+button:hover,
+button:active,
+button:focus-visible {
+    font-style: italic;
+    text-decoration: underline;
+    outline: 2px solid #003569;
 }
 
 
