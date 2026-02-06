@@ -177,6 +177,11 @@ nav a,
 /* ====================
     Form Fields & Button
 ==================== */
+/* Adds spacing between form elements to improve readability */
+.field {
+    margin-bottom: 1em;
+}
+
 /* Styles for when hovering over or focusing on form items with a keyboard/mouse */
 input:hover,
 input:focus, 
