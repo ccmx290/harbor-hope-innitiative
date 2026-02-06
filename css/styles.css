@@ -26,37 +26,99 @@ ol {
     padding: 0;
 }
 
+/* ====================
+    Locally Hosted Fonts
+==================== */
+
+@font-face {
+    font-family: "Geist Sans";
+    src: url("../fonts/geist-sans-latin-300-normal.woff2") format("woff2"),
+         url("../fonts/geist-sans-latin-300-normal.woff") format("woff"),
+         url("../fonts/geist-sans-latin-300-normal.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Geist Sans";
+    src: url("../fonts/geist-sans-latin-600-normal.woff2") format("woff2"),
+         url("../fonts/geist-sans-latin-600-normal.woff") format("woff"),
+         url("../fonts/geist-sans-latin-600-normal.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Geist Sans";
+    src: url("../fonts/geist-sans-latin-800-normal.woff2") format("woff2"),
+         url("../fonts/geist-sans-latin-800-normal.woff") format("woff"),
+         url("../fonts/geist-sans-latin-800-normal.ttf") format("truetype");
+    font-weight: 800;
+}
+
 
 /* ====================
     Base Styles 
 ==================== */
-
+/* Specifies properties to be inherited by most text elements */
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "Geist Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 16px;
 
-    /* Specifies properties to be inherited by most text elements */
-    line-height: 1.6;
     color: #222;
-
     background-color: #fff;
+}
+
+ul,
+ol {
+    line-height: 1.5;
 }
 
 
 /* ====================
     Typography 
 ==================== */
-
+/* Headings inherit font-family and color from body, but get their own line-height */
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 0.5em;
-
-    /* Headings inherit font-family and color from body, but their own line-height */
     line-height: 1.2;
 }
 
-/* Adds spacing for more comfortable reading */
+h1, h2 {
+    font-weight: 800;
+}
+
+h3, h4, h5, h6, 
+strong {
+    font-weight: 600;
+}
+
+/* Margin-top adds extra space to separate h3 headings from any links above them, without removing the bottom margin specified above */
+h3 { 
+    margin-top: 1em;
+}
+
+/* Margin adds spacing for more comfortable reading */
 p {
     margin: 0 0 1em;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+/* Adds space between an unordered list and the paragraph/form above or below it  */
+.hero-actions,
+.hero-highlights,
+.donation-notes {
+    margin-bottom: 1em;
+}
+
+/* Removes bottom margin (added with the p selector above) in paragraphs at the end of a section to keep spacing between sections consistent */
+.quote-attrib, 
+.donate .fineprint {
+    margin-bottom: 0;
+}
+
+/* Adds space between the form button and the form fineprint */
+.donate .fineprint {
+    margin-top: 1em;
 }
 
 
@@ -93,7 +155,7 @@ a:focus-visible {
 nav a,
 .hero a,
 .btn-outline {
-    font-weight: bold;
+    font-weight: 600;
 }
 
 /* Adds underline to make links more identifiable beyond just being blue text */
@@ -103,7 +165,6 @@ nav a,
 .text-link {
     text-decoration: underline;
 }
-
 
 /* Removes underline when focusing with keyboard to maintain visual consistency */
 .hero a:focus-visible,
