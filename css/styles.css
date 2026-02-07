@@ -133,10 +133,6 @@ a {
 
 a:hover {
     color: #003569; 
-}
-
-a:hover
- {
     text-decoration: underline;
 }
 
@@ -144,7 +140,7 @@ a:active {
     color: #021529;
 }
 
-/* Styles applied when focusing on a link by tabbing to it, but not by clicking with a mouse */
+/* Styles applied with :focus-visible only (no :focus) so they are only applied when focusing on a link by tabbing to it, but not by clicking with a mouse */
 a:focus-visible {
     color: #003569;
     outline: 2px solid #003569;
@@ -166,7 +162,7 @@ nav a,
     text-decoration: underline;
 }
 
-/* Removes underline when focusing with keyboard to maintain visual consistency */
+/* Removes underline when focusing on links with a keyboard to maintain visual consistency; only using :focus-visible so the underline remains when focusing with a mouse, like with all other links */
 .hero a:focus-visible,
 .btn-outline:focus-visible,
 .text-link:focus-visible {
