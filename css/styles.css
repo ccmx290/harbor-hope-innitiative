@@ -91,34 +91,12 @@ strong {
     font-weight: 600;
 }
 
-/* Margin-top adds extra space to separate h3 headings from any links above them, without removing the bottom margin specified above */
-h3 { 
-    margin-top: 1em;
-}
 
 /* Margin adds spacing for more comfortable reading */
 p {
     margin: 0 0 1em;
     line-height: 1.5;
     font-weight: 300;
-}
-
-/* Adds space between an unordered list and the paragraph/form above or below it  */
-.hero-actions,
-.hero-highlights,
-.donation-notes {
-    margin-bottom: 1em;
-}
-
-/* Removes bottom margin (added with the p selector above) in paragraphs at the end of a section to keep spacing between sections consistent */
-.quote-attrib, 
-.donate .fineprint {
-    margin-bottom: 0;
-}
-
-/* Adds space between the form button and the form fineprint */
-.donate .fineprint {
-    margin-top: 1em;
 }
 
 
@@ -147,7 +125,7 @@ a:focus-visible {
     background-color: #d7e7f7;   
 }
 
-/* Makes nav links and button-like elements bolder so they stand out from other links */
+/* Makes nav links and button-like elements bolder so they stand out from other links; does this by using a specific font weight corresponding to the font family */
 nav a,
 .hero a,
 .btn-outline {
@@ -173,11 +151,6 @@ nav a,
 /* ====================
     Form Fields & Button
 ==================== */
-/* Adds spacing between form elements to improve readability */
-.field {
-    margin-bottom: 1em;
-}
-
 /* Styles for when hovering over or focusing on form items with a keyboard/mouse */
 input:hover,
 input:focus, 
