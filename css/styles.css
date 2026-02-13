@@ -58,7 +58,7 @@ ol {
 /* ====================
     Base Styles 
 ==================== */
-/* Specifies properties to be inherited by most text elements */
+/* Specifies properties to be inherited by most text elements  */
 body {
     font-family: "Geist Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 16px;
@@ -67,9 +67,12 @@ body {
     background-color: #fff;
 }
 
+/* Added padding only to the left side of ul/ol lists so the bullets don't push into the left margin */
 ul,
 ol {
     line-height: 1.5;
+
+    padding: 0 0 0 30px;
 }
 
 
@@ -91,12 +94,35 @@ strong {
     font-weight: 600;
 }
 
+/* Margin-top adds extra space to separate h3 headings from any links above them, without removing the bottom margin specified above */
+h3 {
+    margin-top: 1em;
+}
 
 /* Margin adds spacing for more comfortable reading */
 p {
+    font-weight: 300;
+
     margin: 0 0 1em;
     line-height: 1.5;
-    font-weight: 300;
+}
+
+/* Adds space between the links and unordered list in the Hero section, and between the donation notes and the form */
+.hero-actions,
+.hero-highlights,
+.donation-notes {
+    margin-bottom: 1em;
+}
+
+/* Removes only the bottom margin (added with the p selector above) in paragraphs at the end of the Impact and Donate sections to keep the spacing between all sections consistent */
+.quote-attrib,
+.donate .fineprint {
+    margin-bottom: 0;
+}
+
+/* Adds space between the form button and the form fineprint */
+.donate .fineprint {
+    margin-top: 1em;
 }
 
 
@@ -120,9 +146,10 @@ a:active {
 
 /* Styles applied with :focus-visible only (no :focus) so they are only applied when focusing on a link by tabbing to it, but not by clicking with a mouse */
 a:focus-visible {
+    padding: .25em;
     color: #003569;
     outline: 2px solid #003569;
-    background-color: #d7e7f7;   
+    background-color: #d7e7f7;
 }
 
 /* Makes nav links and button-like elements bolder so they stand out from other links; does this by using a specific font weight corresponding to the font family */
@@ -132,17 +159,37 @@ nav a,
     font-weight: 600;
 }
 
+/* Adds space between the buttons in the Hero section */
+.hero a:first-of-type {
+    margin-right: .5em;
+}
+
+/* Adds spacing and borders to button-like elements */
+.hero a,
+.btn-outline {
+    padding: .25em .5em;
+    border: 2px solid #0066cc;
+}
+
+/* Makes the color of interaction states consistent for the button borders */
+.hero a:hover,
+.btn-outline:hover,
+.hero a:focus-visible,
+.btn-outline:focus-visible {
+    text-decoration: none;
+    border: 2px solid #003569;
+}
+
 /* Adds underline to make links more identifiable beyond just being blue text */
-.hero a, 
-.btn-outline,
 .skip-link,
 .text-link {
     text-decoration: underline;
 }
 
 /* Removes underline when focusing on links with a keyboard to maintain visual consistency; only using :focus-visible so the underline remains when focusing with a mouse, like with all other links */
-.hero a:focus-visible,
-.btn-outline:focus-visible,
+.skip-link:hover,
+.text-link:hover,
+.skip-link:focus-visible,
 .text-link:focus-visible {
     text-decoration: none;
 }
@@ -151,6 +198,20 @@ nav a,
 /* ====================
     Form Fields & Button
 ==================== */
+/* Adds space between form labels and the input boxes/textarea */
+label {
+    margin-right: .25em; 
+}
+
+/* Applies body font-family to form elements; increases font size and adds breathing room to the text inside the button & in the input/textarea fields */
+button,
+input,
+textarea {
+    font-family: inherit;
+    font-size: 14px;
+    padding: .25em .5em;
+}
+
 /* Styles for when hovering over or focusing on form items with a keyboard/mouse */
 input:hover,
 input:focus, 
@@ -165,6 +226,16 @@ button:focus-visible {
     font-style: italic;
     text-decoration: underline;
     outline: 2px solid #003569;
+}
+
+/* Adds spacing between form elements to improve readability */
+.field {
+    margin-bottom: 1em;
+}
+
+/* Adds slight padding above and below the radio buttons */
+.radio-row {
+    padding: .25em 0;
 }
 
 
