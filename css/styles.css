@@ -180,6 +180,13 @@ nav a,
     border: 2px solid #003569;
 }
 
+/* Changes outline color when button-like elements are active */
+.hero a:active,
+.btn-outline:active {
+    padding: .25em .5em;
+    border: 2px solid #021529;
+}
+
 /* Adds underline to make links more identifiable beyond just being blue text */
 .skip-link,
 .text-link {
