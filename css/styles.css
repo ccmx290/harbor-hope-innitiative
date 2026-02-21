@@ -107,6 +107,12 @@ p {
     line-height: 1.5;
 }
 
+/* Changed footer text color and weight to make it more legible after making the background dark */
+footer p {
+    color: #fff;
+    font-weight: 600;
+}
+
 /* Adds space between the links and unordered list in the Hero section, and between the donation notes and the form */
 .hero-actions,
 .hero-highlights,
@@ -150,6 +156,15 @@ a:focus-visible {
     color: #003569;
     outline: 2px solid #003569;
     background-color: #d7e7f7;
+}
+
+/* Changed footer link color after adding a dark background to the footer */
+footer a {
+    color: #fff;
+}
+
+footer a:hover {
+    color: #aed6ff;
 }
 
 /* Makes nav links and button-like elements bolder so they stand out from other links; does this by using a specific font weight corresponding to the font family */
@@ -243,6 +258,28 @@ button:focus-visible {
 /* Adds slight padding above and below the radio buttons */
 .radio-row {
     padding: .25em 0;
+}
+
+
+/* ====================
+    Backgrounds & Gradients
+==================== */
+/* Added a dark, blue-tone background to the footer to make it stand out from the rest of the site */
+footer {
+    background-color: #203041;
+}
+
+/* Added padding to make background image larger and more impactful, and add space to the hero section of the site; added gradient using blue tones to match the color scheme of the site and make the text on top of the image legible */
+.hero {
+    padding: 13em 0;
+
+    background: 
+        linear-gradient(to bottom, rgba(179, 207, 236, 0.8), rgb(255, 255, 255)),
+        url("../images/supplies.jpg")
+        /* url("https://ccmx290.github.io/harbor-hope-initiative/images/") */;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 
