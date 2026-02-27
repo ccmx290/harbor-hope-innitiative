@@ -85,6 +85,22 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
 }
 
+/* Increased h1, h2, and h3 font sizes for improved hierarchy, especially when quickly scanning the page */
+h1 {
+    font-size: 3.5em;
+}
+
+/* Added color to h2 headings to add visual interest and make section names more attention-grabbing beyond font size */
+h2 {
+    font-size: 2.5em;
+    color: #003569;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+/* Sets thicker weight for h1, h2 heading levels compared to headings at smaller sizes */
 h1, h2 {
     font-weight: 800;
 }
@@ -107,10 +123,11 @@ p {
     line-height: 1.5;
 }
 
-/* Changed footer text color and weight to make it more legible after making the background dark */
+/* Changed footer text color and weight to make it more legible after making the background dark; removes additional space between fineprint text and links */
 footer p {
     color: #fff;
     font-weight: 600;
+    margin-bottom: 0;
 }
 
 /* Adds space between the links and unordered list in the Hero section, and between the donation notes and the form */
@@ -158,13 +175,63 @@ a:focus-visible {
     background-color: #d7e7f7;
 }
 
-/* Changed footer link color after adding a dark background to the footer */
+/* Changed footer link color after adding a dark background to the footer; added underline after removing list markers to distinguish links */
 footer a {
     color: #fff;
+    text-decoration: underline;
+}
+
+footer a:active {
+    font-weight: 600;
+    text-decoration: none;
 }
 
 footer a:hover {
     color: #aed6ff;
+    text-decoration: none;
+}
+
+/* Removes list markers; allows the left side of the nav & footer links to be flush with the rest of the text on the site */
+nav ul,
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Organizes navigation links (in navbar and footer) into a single line; adds space between nav links and the text above them; margin-right adds space between the links */
+nav li,
+footer li {
+    display: inline-block;
+
+    text-align: center;
+    padding-top: .75em;
+    margin-right: 1em;
+}
+
+/* removes margin-right from the last navigation link */
+nav li:last-of-type,
+footer li:last-of-type {
+    margin-right: 0;
+}
+
+/* Styling for brand name link */
+.brand {
+    color: #000;
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+.brand:hover {
+    color: #003569;
+}
+
+.brand:active {
+    color: #021529;
+}
+
+.brand:focus-visible {
+    color: #003569;
+    text-decoration: none;
 }
 
 /* Makes nav links and button-like elements bolder so they stand out from other links; does this by using a specific font weight corresponding to the font family */
@@ -174,32 +241,41 @@ nav a,
     font-weight: 600;
 }
 
+/* Adds space between button-like elements and the text above/below in the hero section */
+.hero-actions {
+    padding: .75em 0 .75em;
+}
+
 /* Adds space between the buttons in the Hero section */
 .hero a:first-of-type {
     margin-right: .5em;
 }
 
-/* Adds spacing and borders to button-like elements */
+/* Adds spacing and borders to button-like elements; changed to have a background color instead of a border to be more attention-catching */
 .hero a,
 .btn-outline {
-    padding: .25em .5em;
-    border: 2px solid #0066cc;
+    padding: .5em .75em;
+    color: #fff;
+    background-color: #0066cc;
 }
 
-/* Makes the color of interaction states consistent for the button borders */
+/* Makes the color of interaction states consistent for the buttons */
 .hero a:hover,
 .btn-outline:hover,
 .hero a:focus-visible,
 .btn-outline:focus-visible {
     text-decoration: none;
-    border: 2px solid #003569;
+    padding: .5em .75em;
+    color: #fff;
+    background-color: #003569;
 }
 
-/* Changes outline color when button-like elements are active */
+/* Changes background color when button-like elements are active */
 .hero a:active,
 .btn-outline:active {
-    padding: .25em .5em;
-    border: 2px solid #021529;
+    padding: .5em .75em;
+    color: #fff;
+    background-color: #021529;
 }
 
 /* Adds underline to make links more identifiable beyond just being blue text */
@@ -264,6 +340,11 @@ button:focus-visible {
 /* ====================
     Backgrounds & Gradients
 ==================== */
+/* Adds faint background color to alternating sections */
+section:nth-child(odd) {
+    background-color: #dfe8f152;
+}
+
 /* Added a dark, blue-tone background to the footer to make it stand out from the rest of the site */
 footer {
     background-color: #203041;
@@ -271,7 +352,7 @@ footer {
 
 /* Added padding to make background image larger and more impactful, and add space to the hero section of the site; added gradient using blue tones to match the color scheme of the site and make the text on top of the image legible */
 .hero {
-    padding: 13em 0;
+    padding: 8em 0;
 
     background: 
         linear-gradient(to bottom, rgba(179, 207, 236, 0.8), rgb(255, 255, 255)),
@@ -284,11 +365,50 @@ footer {
 
 
 /* ====================
+    Layout Spacing 
+==================== */
+/* Padding between all section elements */
+section,
+footer {
+    padding: 3em 0;
+}
+
+/* Sets padding to navbar only */
+.site-header {
+    padding: 1em 0;
+}
+
+
+/* ====================
     Layout Helper 
 ==================== */
-
+/* Used padding only for sides of container-class sections */
 .container {
     max-width: 1200px;
     margin-inline: auto;
-    padding: 1rem;
+
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+
+/* ====================
+    Media Queries
+==================== */
+@media screen and (max-width: 600px) {
+    /* Reduces side padding at smaller sizes */
+    .container {
+        padding-left: 2.5em;
+        padding-right: 2.5em;
+    }
+}
+
+/* Prevents links from wrapping when resized to smaller sizes, until I can add flexbox */
+@media screen and (max-width: 500px) {
+    nav li {    
+        display: block;
+        text-align: start;
+        padding-top: .75em;
+        margin-right: 1em;
+    }
 }
