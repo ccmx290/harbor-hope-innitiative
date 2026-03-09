@@ -1,8 +1,6 @@
 /* ====================
-    CSS Reset 
-==================== */
-
-*, 
+	CSS Reset
+==================== */*, 
 *::before, 
 *::after {
     box-sizing: border-box;
@@ -15,21 +13,21 @@ body {
 
 /* Makes images responsive to avoid spacing issues */
 img {
-    max-width: 100%;
     display: block;
+    max-width: 100%;
 }
 
 /* Removes the default spacing in lists */
 ul,
 ol {
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
+
 
 /* ====================
     Locally Hosted Fonts
 ==================== */
-
 @font-face {
     font-family: "Geist Sans";
     src: url("../fonts/geist-sans-latin-300-normal.woff2") format("woff2"),
@@ -56,103 +54,70 @@ ol {
 
 
 /* ====================
-    Base Styles 
+	Base Styles
 ==================== */
-/* Specifies properties to be inherited by most text elements  */
 body {
     font-family: "Geist Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: 16px;
-
+    font-size: 16px; /* Base font size */
+    font-weight: 300;
     color: #222;
+
     background-color: #fff;
 }
 
-/* Added padding only to the left side of ul/ol lists so the bullets don't push into the left margin */
+/* Added padding only to the left side of ul/ol lists so bullets don't push into the left margin */
 ul,
 ol {
-    line-height: 1.5;
+    padding-left: 30px;
 
-    padding: 0 0 0 30px;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 0.5em;
+
+    line-height: 1.2;
 }
 
 
 /* ====================
-    Typography 
+	Typography
 ==================== */
-/* Headings inherit font-family and color from body, but get their own line-height */
-h1, h2, h3, h4, h5, h6 {
-    margin: 0 0 0.5em;
-    line-height: 1.2;
-}
-
-/* Increased h1, h2, and h3 font sizes for improved hierarchy, especially when quickly scanning the page */
+/* Increased h1, h2, and h3 font sizes for improved hierarchy */
 h1 {
     font-size: 3.5em;
 }
 
-/* Added color to h2 headings to add visual interest and make section names more attention-grabbing beyond font size */
+/* Added color to h2 headings to add visual interest & make them stand out */
 h2 {
     font-size: 2.5em;
     color: #003569;
 }
 
+/* Adds top margin for extra space to separate h3 headings from any links above them, without removing the bottom margin specified above */
 h3 {
+    margin-top: 1em;
+
     font-size: 1.5em;
 }
 
-/* Sets thicker weight for h1, h2 heading levels compared to headings at smaller sizes */
-h1, h2 {
-    font-weight: 800;
-}
-
+/* Makes "smaller" heading levels thinner than h1s and h2s & boldens text with the <strong> tags */
 h3, h4, h5, h6, 
 strong {
     font-weight: 600;
 }
 
-/* Margin-top adds extra space to separate h3 headings from any links above them, without removing the bottom margin specified above */
-h3 {
-    margin-top: 1em;
-}
-
-/* Margin adds spacing for more comfortable reading */
 p {
-    font-weight: 300;
-
     margin: 0 0 1em;
+
     line-height: 1.5;
-}
-
-/* Changed footer text color and weight to make it more legible after making the background dark; removes additional space between fineprint text and links */
-footer p {
-    color: #fff;
-    font-weight: 600;
-    margin-bottom: 0;
-}
-
-/* Adds space between the links and unordered list in the Hero section, and between the donation notes and the form */
-.hero-actions,
-.hero-highlights,
-.donation-notes {
-    margin-bottom: 1em;
-}
-
-/* Removes only the bottom margin (added with the p selector above) in paragraphs at the end of the Impact and Donate sections to keep the spacing between all sections consistent */
-.quote-attrib,
-.donate .fineprint {
-    margin-bottom: 0;
-}
-
-/* Adds space between the form button and the form fineprint */
-.donate .fineprint {
-    margin-top: 1em;
 }
 
 
 /* ====================
-    Links
+	Links
 ==================== */
-/* Color for all links prior to being interacted with; sets text-decoration to "none" so it can be purposefully reapplied later to only specific links */
+/* Sets text-decoration to "none" so it can be purposefully reapplied later to only specific links */
 a {
     color: #0066cc;
     text-decoration: none;
@@ -167,58 +132,23 @@ a:active {
     color: #021529;
 }
 
-/* Styles applied with :focus-visible only (no :focus) so they are only applied when focusing on a link by tabbing to it, but not by clicking with a mouse */
+/* Styles applied with :focus-visible only (no :focus) so they are only applied when focusing on a link by tabbing to it, not by clicking with a mouse */
 a:focus-visible {
-    padding: .25em;
     color: #003569;
-    outline: 2px solid #003569;
+
     background-color: #d7e7f7;
+    outline: 2px solid #003569;
 }
 
-/* Changed footer link color after adding a dark background to the footer; added underline after removing list markers to distinguish links */
-footer a {
-    color: #fff;
-    text-decoration: underline;
-}
-
-footer a:active {
-    font-weight: 600;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #aed6ff;
-    text-decoration: none;
-}
-
-/* Removes list markers; allows the left side of the nav & footer links to be flush with the rest of the text on the site */
-nav ul,
-footer ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-/* Organizes navigation links (in navbar and footer) into a single line; adds space between nav links and the text above them; margin-right adds space between the links */
-nav li,
-footer li {
-    display: inline-block;
-
-    text-align: center;
-    padding-top: .75em;
-    margin-right: 1em;
-}
-
-/* removes margin-right from the last navigation link */
-nav li:last-of-type,
-footer li:last-of-type {
-    margin-right: 0;
+a:not(.hero a, .btn-outline):focus-visible {
+    padding: .25em;
 }
 
 /* Styling for brand name link */
 .brand {
-    color: #000;
-    font-weight: 600;
     font-size: 1.25em;
+    font-weight: 600;
+    color: #000;
 }
 
 .brand:hover {
@@ -234,57 +164,110 @@ footer li:last-of-type {
     text-decoration: none;
 }
 
-/* Makes nav links and button-like elements bolder so they stand out from other links; does this by using a specific font weight corresponding to the font family */
+
+/* ====================
+	Navigation
+==================== */
+/* Made text white for legibility over dark bg color; added underline after removing list markers to distinguish links */
+footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+footer a:active {
+    font-weight: 600;
+}
+
+footer a:active,
+footer a:hover {
+    color: #aed6ff;
+}
+
+footer a:active,
+footer a:hover,
+footer a:focus-visible {
+    text-decoration: none;
+}
+
+/* Removes list markers; allows left side of nav & footer links to be flush with other site content */
+nav ul,
+footer ul {
+    padding: 0;
+
+    list-style-type: none;
+}
+
+/* Organizes navigation links (navbar & footer) into a single line; adds space between nav links and the text above them; margin-right adds space between the links */
+nav li,
+footer li {
+    display: inline-block;
+
+    padding-top: .75em;
+    margin-right: 1em;
+
+    text-align: center;
+}
+
+/* removes margin-right from the last navigation link */
+nav li:last-of-type,
+footer li:last-of-type {
+    margin-right: 0;
+}
+
 nav a,
 .hero a,
 .btn-outline {
     font-weight: 600;
 }
 
-/* Adds space between button-like elements and the text above/below in the hero section */
 .hero-actions {
-    padding: .75em 0 .75em;
+    padding: .75em 0 2em;
 }
 
-/* Adds space between the buttons in the Hero section */
 .hero a:first-of-type {
     margin-right: .5em;
 }
 
-/* Adds spacing and borders to button-like elements; changed to have a background color instead of a border to be more attention-catching */
+/* Adds spacing and borders to button-like elements; changed to have a background color instead of a border to look more like a button*/
 .hero a,
 .btn-outline {
     padding: .5em .75em;
+
     color: #fff;
+
     background-color: #0066cc;
 }
 
-/* Makes the color of interaction states consistent for the buttons */
 .hero a:hover,
 .btn-outline:hover,
 .hero a:focus-visible,
 .btn-outline:focus-visible {
-    text-decoration: none;
-    padding: .5em .75em;
-    color: #fff;
     background-color: #003569;
 }
 
-/* Changes background color when button-like elements are active */
+.hero a:hover,
+.hero a:focus-visible,
+.hero a:active,
+.btn-outline:hover,
+.btn-outline:focus-visible,
+.btn-outline:active {
+    color: #fff;
+    text-decoration: none;
+
+    outline: none;
+}
+
 .hero a:active,
 .btn-outline:active {
-    padding: .5em .75em;
-    color: #fff;
     background-color: #021529;
 }
 
-/* Adds underline to make links more identifiable beyond just being blue text */
 .skip-link,
 .text-link {
     text-decoration: underline;
 }
 
-/* Removes underline when focusing on links with a keyboard to maintain visual consistency; only using :focus-visible so the underline remains when focusing with a mouse, like with all other links */
+/* Removes underline when focusing on links with a keyboard for visual consistency; only using :focus-visible so the underline remains when focusing with a mouse, like with other links */
 .skip-link:hover,
 .text-link:hover,
 .skip-link:focus-visible,
@@ -294,23 +277,51 @@ nav a,
 
 
 /* ====================
-    Form Fields & Button
+	Sections
 ==================== */
-/* Adds space between form labels and the input boxes/textarea */
+/* Changed text color and weight for legibility on dark bg; removes additional space between fineprint text and links */
+footer p {
+    margin-bottom: 0;
+
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Adds space between the links and ul in the Hero section, and between the donation notes and the form */
+.hero-highlights,
+.donation-notes {
+    margin-bottom: 1em;
+}
+
+/* Removes only the bottom margin (added with the p selector) in paragraphs at the end of the Impact and Donate sections for section spacing consistency */
+.quote-attrib,
+.donate .fineprint {
+    margin-bottom: 0;
+}
+
+/* Adds space between the form button and the form fineprint */
+.donate .fineprint {
+    margin-top: 1em;
+}
+
+
+/* ====================
+	Form Fields
+==================== */
 label {
     margin-right: .25em; 
 }
 
-/* Applies body font-family to form elements; increases font size and adds breathing room to the text inside the button & in the input/textarea fields */
+/* Applies body font-family and font-size to form input boxes; adds breathing room to the text inside the button & in the input/textarea fields */
 button,
 input,
 textarea {
-    font-family: inherit;
-    font-size: 14px;
     padding: .25em .5em;
+
+    font-family: inherit;
+    font-size: inherit;
 }
 
-/* Styles for when hovering over or focusing on form items with a keyboard/mouse */
 input:hover,
 input:focus, 
 textarea:hover,
@@ -318,20 +329,20 @@ textarea:focus {
     outline: 2px solid #003569;
 }
 
+
 button:hover,
 button:active,
 button:focus-visible {
     font-style: italic;
     text-decoration: underline;
+
     outline: 2px solid #003569;
 }
 
-/* Adds spacing between form elements to improve readability */
 .field {
     margin-bottom: 1em;
 }
 
-/* Adds slight padding above and below the radio buttons */
 .radio-row {
     padding: .25em 0;
 }
@@ -345,12 +356,10 @@ section:nth-child(odd) {
     background-color: #dfe8f152;
 }
 
-/* Added a dark, blue-tone background to the footer to make it stand out from the rest of the site */
 footer {
     background-color: #203041;
 }
 
-/* Added padding to make background image larger and more impactful, and add space to the hero section of the site; added gradient using blue tones to match the color scheme of the site and make the text on top of the image legible */
 .hero {
     padding: 8em 0;
 
@@ -363,11 +372,10 @@ footer {
     background-repeat: no-repeat;
 }
 
-
 /* ====================
     Layout Spacing 
 ==================== */
-/* Padding between all section elements */
+/* Padding between sections */
 section,
 footer {
     padding: 3em 0;
@@ -378,17 +386,12 @@ footer {
     padding: 1em 0;
 }
 
-
-/* ====================
-    Layout Helper 
-==================== */
 /* Used padding only for sides of container-class sections */
 .container {
-    max-width: 1200px;
-    margin-inline: auto;
-
     padding-left: 5em;
     padding-right: 5em;
+    margin-inline: auto;
+    max-width: 1200px;
 }
 
 
@@ -406,9 +409,11 @@ footer {
 /* Prevents links from wrapping when resized to smaller sizes, until I can add flexbox */
 @media screen and (max-width: 500px) {
     nav li {    
-        display: block;
-        text-align: start;
-        padding-top: .75em;
-        margin-right: 1em;
+    display: block;
+
+    padding-top: .75em;
+    margin-right: 1em;
+
+    text-align: start;
     }
 }
