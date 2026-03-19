@@ -449,7 +449,7 @@ footer {
 }
 
 /* Prevents links from wrapping when resized to smaller sizes, until I can add flexbox */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
     nav li {    
     display: block;
 
@@ -467,9 +467,7 @@ footer {
         top: 0;
         left: 0;
     }
-}
-
-@media screen and (max-width: 900px) {
+    
     .tile {
         position: relative;
 
