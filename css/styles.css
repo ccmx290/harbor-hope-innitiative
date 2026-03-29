@@ -140,11 +140,10 @@ a:focus-visible {
     outline: 2px solid #003569;
 }
 
-a:not(.hero a, .btn-outline):focus-visible {
+a:not(.hero a, .text-link, .btn-outline):focus-visible {
     padding: .25em;
 }
 
-/* Styling for brand name link */
 .brand {
     font-size: 1.5em;
     color: #000;
@@ -166,6 +165,7 @@ a:not(.hero a, .btn-outline):focus-visible {
 nav a,
 .brand,
 .hero a,
+.text-link,
 .btn-outline {
     font-weight: 600;
 }
@@ -178,12 +178,10 @@ nav a,
     margin-right: .5em;
 }
 
-/* Adds spacing and borders to button-like elements; changed to have a background color instead of a border to look more like a button*/
 .hero a,
+.text-link,
 .btn-outline {
     padding: .5em .75em;
-
-    width: 200px;
 
     color: #fff;
     text-align: center;
@@ -192,8 +190,10 @@ nav a,
 }
 
 .hero a:hover,
+.text-link:hover,
 .btn-outline:hover,
 .hero a:focus-visible,
+.text-link:focus-visible,
 .btn-outline:focus-visible {
     background-color: #003569;
 }
@@ -201,6 +201,9 @@ nav a,
 .hero a:hover,
 .hero a:focus-visible,
 .hero a:active,
+.text-link:hover,
+.text-link:focus-visible,
+.text-link:active,
 .btn-outline:hover,
 .btn-outline:focus-visible,
 .btn-outline:active {
@@ -211,6 +214,7 @@ nav a,
 }
 
 .hero a:active,
+.text-link:active,
 .btn-outline:active {
     background-color: #021529;
 }
@@ -221,16 +225,13 @@ nav a,
     padding: 1em 5em;
 }
 
-.skip-link,
-.text-link {
+.skip-link {
     text-decoration: underline;
 }
 
 /* Removes underline when focusing on links with a keyboard for visual consistency; only using :focus-visible so the underline remains when focusing with a mouse, like with other links */
 .skip-link:hover,
-.text-link:hover,
-.skip-link:focus-visible,
-.text-link:focus-visible {
+.skip-link:focus-visible {
     text-decoration: none;
 }
 
@@ -251,10 +252,13 @@ nav li,
 footer li {
     display: inline-block;
 
-    padding-top: .75em;
     margin-right: 1em;
 
     text-align: center;
+}
+
+nav li {
+    padding-top: .75em;
 }
 
 /* removes margin-right from the last navigation link */
@@ -295,6 +299,12 @@ footer p {
     color: #fff;
 }
 
+.footer-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .site-nav {
     position: relative;
 
@@ -307,31 +317,39 @@ footer p {
     bottom: 1em;
 }
 
+.cards,
+.opportunities {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card, 
 .tile {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
-    padding: 2em 3em;
-    margin-bottom: 2em;
+    padding: 2em 2em;
 
-    border: 2px solid #0066cc;
+    max-width: 300px;
+
+    text-align: center;
+
+    background-color: #d7e7f7;
     border-radius: 1em;
 }
 
+.card:hover,
+.tile:hover {
+    background-color: #fff;
+}
+
 /* Removes top margin from h3 in the cards only*/
+.card h3,
 .tile h3 {
     margin-top: 0;
-}
-
-/* Removes additional space under paragraphs in the "Get Involved" cards */
-.tile p {
-    margin-bottom: 0;
-}
-
-.tile .btn {
-    position: absolute;
-    top: 50%;
-    right: 3em;    
-    transform: translate(0, -50%);
 }
 
 /* Adds space between the links and ul in the Hero section, and between the donation notes and the form */
@@ -355,10 +373,6 @@ footer p {
 /* ====================
 	Form Fields
 ==================== */
-label {
-    margin-right: .25em; 
-}
-
 /* Applies body font-family and font-size to form input boxes; adds breathing room to the text inside the button & in the input/textarea fields */
 button,
 input,
@@ -440,7 +454,6 @@ footer {
     Media Queries
 ==================== */
 @media screen and (max-width: 600px) {
-    /* Reduces side padding at smaller sizes */
     .skip-link,
     .container {
         padding-left: 2.5em;
@@ -448,14 +461,21 @@ footer {
     }
 }
 
-/* Prevents links from wrapping when resized to smaller sizes, until I can add flexbox */
+@media screen and (max-width: 800px) {
+    .footer-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 @media screen and (max-width: 950px) {
     nav li {    
-    display: block;
+        display: block;
 
-    margin-right: 0;
+        margin-right: 0;
 
-    text-align: start;
+        text-align: start;
     }
 
     .site-nav {
@@ -467,20 +487,23 @@ footer {
         top: 0;
         left: 0;
     }
-    
-    .tile {
-        position: relative;
 
+}
+
+/* Makes "Get Involved" cards responsive */
+@media screen and (max-width: 1150px) {
+    .cards,
+    .opportunities {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .card,
+    .tile {     
+        flex-direction: column;
         text-align: center;
-    }
 
-    .tile p {
-        margin-bottom: 1.5em;
-    }
-
-    .tile .btn {
-        position: relative;
-        top: 0;
-        left: 0;
+        max-width: 1200px;
     }
 }
