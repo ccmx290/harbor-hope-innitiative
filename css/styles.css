@@ -85,20 +85,20 @@ h1, h2, h3, h4, h5, h6 {
 ==================== */
 /* Increased h1, h2, and h3 font sizes for improved hierarchy */
 h1 {
-    font-size: 3.5em;
+    font-size: 3.5rem;
 }
 
 /* Added color to h2 headings to add visual interest & make them stand out */
 h2 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
     color: #003569;
 }
 
 /* Adds top margin for extra space to separate h3 headings from any links above them, without removing the bottom margin specified above */
 h3 {
-    margin-top: 1em;
+    margin-top: 1rem;
 
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
 h3, h4, h5, h6, 
@@ -107,7 +107,7 @@ strong {
 }
 
 p {
-    margin: 0 0 1em;
+    margin: 0 0 1rem;
 
     line-height: 1.5;
 }
@@ -140,11 +140,11 @@ a:focus-visible {
 }
 
 a:not(.hero a, .text-link, .btn-outline):focus-visible {
-    padding: .25em;
+    padding: .25rem;
 }
 
 .brand {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     color: #000;
 }
 
@@ -171,25 +171,25 @@ button,
 }
 
 .hero-actions {
-    padding: .75em 0 2em;
+    padding: .75rem 0 2rem;
 }
 
 .hero a:first-of-type {
-    margin-right: .5em;
+    margin-right: .5rem;
 }
 
 .hero a,
 .text-link,
 .btn-outline,
 button {
-    padding: .5em .75em;
+    padding: .5rem .75rem;
 
     color: #fff;
     text-align: center;
 
     background-color: #0066cc;
 
-    border-radius: .5em;
+    border-radius: .5rem;
 }
 
 .hero a:hover,
@@ -225,7 +225,7 @@ button {
 .skip-link {
     display: block;
 
-    padding: 1em 5em;
+    padding: 1rem 5rem;
 }
 
 .skip-link {
@@ -255,13 +255,13 @@ nav li,
 footer li {
     display: inline-block;
 
-    margin-right: 1em;
+    margin-right: 1rem;
 
     text-align: center;
 }
 
 nav li {
-    padding-top: .75em;
+    padding-top: .75rem;
 }
 
 /* removes margin-right from the last navigation link */
@@ -318,13 +318,13 @@ footer p {
 .site-nav {
     position: relative;
 
-    padding-bottom: 1em;
+    padding-bottom: 1rem;
 }
 
 .nav-list {
     position: absolute;
     right: 0;
-    bottom: 1em;
+    bottom: 1rem;
 }
 
 .cards,
@@ -334,6 +334,7 @@ footer p {
     justify-content: space-between;
 }
 
+/* Turns the content in the "Programs" and "Get Involved" section into cards and adds flexbox for layout and responsiveness */
 .card, 
 .tile {
     display: flex;
@@ -341,14 +342,14 @@ footer p {
     justify-content: space-between;
     align-items: center;
 
-    padding: 2em 2em;
+    padding: 2rem 2rem;
 
     max-width: 300px;
 
     text-align: center;
 
     background-color: #d7e7f7;
-    border-radius: 1em;
+    border-radius: 1rem;
 }
 
 .card:hover,
@@ -365,7 +366,7 @@ footer p {
 /* Adds space between the links and ul in the Hero section, and between the donation notes and the form */
 .hero-highlights,
 .donation-notes {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
 /* Removes only the bottom margin (added with the p selector) in paragraphs at the end of the Impact and Donate sections for section spacing consistency */
@@ -374,14 +375,15 @@ footer p {
     margin-bottom: 0;
 }
 
+/* Turns stats into a 3-column grid layout to make them standout from other text */
 .stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1em;
+    gap: 1rem;
 
-    padding: 2em 0;
+    padding: 2rem 0;
 
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: 600;
     text-align: center;
 
@@ -389,7 +391,7 @@ footer p {
 }
 
 .quote-band {
-    font-size: 1.25em;
+    font-size: 1.25rem;
     text-align: center;
 
     color: #003569;
@@ -404,19 +406,20 @@ footer p {
 /* ====================
 	Form Fields
 ==================== */
+/* Applies CSS grid to the form to turn it into a 2-column layout at larger screen sizes */
 form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1.5em;
+    grid-gap: 1.5rem;
 }
 
 input,
 textarea,
 fieldset {
-    padding: .25em .5em;
+    padding: .25rem .5rem;
 
     border: 2px solid #cecece;
-    border-radius: .25em;
+    border-radius: .25rem;
 }
 
 input,
@@ -431,6 +434,7 @@ textarea:focus {
     outline: 2px solid #003569;
 }
 
+/* Applied CSS grid to center the submission button without having it take up the entire width of the container, or be centered inside one of the two columns */
 button {
     grid-column: 1 / -1;
     justify-self: center;
@@ -477,7 +481,7 @@ footer {
 }
 
 .hero {
-    padding: 8em 0;
+    padding: 8rem 0;
 
     background: 
         linear-gradient(to bottom, rgba(179, 207, 236, 0.8), rgb(255, 255, 255)),
@@ -493,13 +497,13 @@ footer {
 ==================== */
 section,
 footer {
-    padding: 3em 0;
+    padding: 3rem 0;
 }
 
 /* Used padding only for sides of container-class sections */
 .container {
-    padding-left: 5em;
-    padding-right: 5em;
+    padding-left: 5rem;
+    padding-right: 5rem;
     margin-inline: auto;
 
     max-width: 1200px;
@@ -509,29 +513,30 @@ footer {
 /* ====================
     Media Queries
 ==================== */
-@media screen and (max-width: 600px) {
-    .skip-link,
-    .container {
-        padding-left: 2.5em;
-        padding-right: 2.5em;
-    }
+/* Centers and stacks footer content; turns the donation form and "Impact" stats into a single column layout;  */
+@media screen and (max-width: 800px) {
+    /* Increases spacing between sections */
+    section {
+    padding: 5rem 0;
 }
 
-
-@media screen and (max-width: 800px) {
     form {
         grid-template-columns: 1fr;
     }
 
+    footer .fineprint {
+        margin-bottom: 1rem;
+    }
+
     .radio-row {
-        padding: 1em 0;
+        padding: 1rem 0;
     }
 
     .stats {
         grid-template-columns: 1fr;
-        gap: 1.25em;
+        gap: 1.25rem;
 
-        font-size: 2.5em;
+        font-size: 2.5rem;
     }
 
     .footer-inner {
@@ -541,7 +546,7 @@ footer {
     }
 }
 
-
+/* Stacks navigation links underneath brand name; reduces side margins at smaller sizes */
 @media screen and (max-width: 950px) {
     nav li {    
         display: block;
@@ -561,6 +566,11 @@ footer {
         left: 0;
     }
 
+    .skip-link,
+    .container {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
 }
 
 
@@ -570,7 +580,7 @@ footer {
     .opportunities {
         display: flex;
         flex-direction: column;
-        gap: 2em;
+        gap: 2rem;
     }
 
     .card,
