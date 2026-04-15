@@ -11,9 +11,10 @@ body {
     margin: 0;
 }
 
-/* Makes images responsive to avoid spacing issues */
+/* Makes images responsive to avoid spacing issues*/
 img {
     display: block;
+
     max-width: 100%;
 }
 
@@ -469,8 +470,21 @@ button:focus-visible {
 
 
 /* ====================
-    Backgrounds & Gradients
+    Images, Backgrounds, & Gradients
 ==================== */
+/* Adds spacing between image and the text above; margin-left/right: auto centers the image; object-fit prevents the image from being stretched out or squished; using width instead of max-width allows the aspect-ratio to work... otherwise it was not applying the aspect-ratio to the image */
+img {
+    padding-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
+
 /* Adds faint background color to alternating sections */
 section:nth-child(odd) {
     background-color: #e0edfa52;
@@ -481,7 +495,7 @@ footer {
 }
 
 .hero {
-    padding: 8rem 0;
+    padding: 8rem 0 3rem 0;
 
     background: 
         linear-gradient(to bottom, rgba(179, 207, 236, 0.8), rgb(255, 255, 255)),
@@ -491,6 +505,7 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
 }
+
 
 /* ====================
     Layout Spacing 
@@ -515,10 +530,15 @@ footer {
 ==================== */
 /* Centers and stacks footer content; turns the donation form and "Impact" stats into a single column layout;  */
 @media screen and (max-width: 800px) {
+    /* Reduces space between image and text at smaller sizes */
+    img {
+        padding-top: .5rem;
+    }
+
     /* Increases spacing between sections */
     section {
-    padding: 5rem 0;
-}
+        padding: 5rem 0;
+    }
 
     form {
         grid-template-columns: 1fr;
