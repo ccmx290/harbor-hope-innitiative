@@ -121,11 +121,13 @@ p {
 a {
     color: #0066cc;
     text-decoration: none;
+
+    transition: all 250ms ease;
 }
 
+/* Removed link underline after adding CSS transformations/transitions to the links using the underline to be identifiable */
 a:hover {
     color: #003569; 
-    text-decoration: underline;
 }
 
 a:active {
@@ -251,7 +253,7 @@ footer ul {
     list-style-type: none;
 }
 
-/* Organizes navigation links (navbar & footer) into a single line; adds space between nav links and the text above them; margin-right adds space between the links */
+/* Organizes navigation links (navbar & footer) into a single line; adds space between nav links and the text above them; margin-right adds space between the links; adds transition to transform added with the :hover interaction state */
 nav li,
 footer li {
     display: inline-block;
@@ -259,6 +261,8 @@ footer li {
     margin-right: 1rem;
 
     text-align: center;
+
+    transition: transform 500ms ease;
 }
 
 nav li {
@@ -289,6 +293,12 @@ footer a:active,
 footer a:hover,
 footer a:focus-visible {
     text-decoration: none;
+}
+
+/* Adds transform to navigation and footer links */
+nav li:hover,
+footer li:hover {
+    transform: scale(1.10);
 }
 
 
@@ -328,14 +338,15 @@ footer p {
     bottom: 1rem;
 }
 
+/* Removed flex-wrap to avoid weird wrapping  readjustment issues with the cards, created by the transform and transition */
 .cards,
 .opportunities {
     display: flex;
-    flex-wrap: wrap;
+    gap: 2rem;
     justify-content: space-between;
 }
 
-/* Turns the content in the "Programs" and "Get Involved" section into cards and adds flexbox for layout and responsiveness */
+/* Turns the content in the "Programs" and "Get Involved" section into cards and adds flexbox for layout and responsiveness; adds transition for a transform added with the :hover interaction state on the cards/tiles */
 .card, 
 .tile {
     display: flex;
@@ -351,11 +362,16 @@ footer p {
 
     background-color: #d7e7f7;
     border-radius: 1rem;
+
+    transition: all 500ms ease;
 }
 
+/* Transform scales cards/tiles when hovered over */
 .card:hover,
 .tile:hover {
     background-color: #fff;
+
+    transform: scale(1.10);
 }
 
 /* Removes top margin from h3 in the cards only*/
@@ -389,6 +405,21 @@ footer p {
     text-align: center;
 
     color: #0066cc;
+}
+
+/* Sets transition for transform rule that translates the statistics up when hovered over */
+.stat {
+    transition: all 500ms ease;
+}
+
+/* Transfprm added that translates the stats up when hovered over */
+.stat:hover {
+    font-size: 2.25rem;
+    font-weight: 800;
+
+    color: #003569;
+
+    transform: translateY(-15px);
 }
 
 .quote-band {
@@ -435,7 +466,7 @@ textarea:focus {
     outline: 2px solid #003569;
 }
 
-/* Applied CSS grid to center the submission button without having it take up the entire width of the container, or be centered inside one of the two columns */
+/* Applied CSS grid to center the submission button without having it take up the entire width of the container, or be centered inside one of the two columns; adds transition to background-color change */
 button {
     grid-column: 1 / -1;
     justify-self: center;
@@ -446,6 +477,8 @@ button {
     border: none;
 
     cursor: pointer;
+
+    transition: background-color 250ms ease;
 }
 
 button:hover,
@@ -528,6 +561,13 @@ footer {
 /* ====================
     Media Queries
 ==================== */
+/* Removes transitions for visitors who have motion-minimizing settings enabled on their device */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none;
+    }
+}
+
 /* Centers and stacks footer content; turns the donation form and "Impact" stats into a single column layout;  */
 @media screen and (max-width: 800px) {
     /* Reduces space between image and text at smaller sizes */
