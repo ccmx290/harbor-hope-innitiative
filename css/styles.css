@@ -412,14 +412,23 @@ footer p {
     transition: all 500ms ease;
 }
 
-/* Transfprm added that translates the stats up when hovered over */
+/* Animation added that translates the stats up when hovered over */
 .stat:hover {
     font-size: 2.25rem;
     font-weight: 800;
 
     color: #003569;
 
-    transform: translateY(-15px);
+    animation: statsAnimation 600ms ease;
+}
+
+@keyframes statsAnimation {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 .quote-band {
@@ -489,6 +498,17 @@ button:focus-visible {
     background-color: #003569;
 
     outline: none;
+
+    animation: buttonAnimation 600ms ease;
+}
+
+@keyframes  buttonAnimation {
+    from {
+        transform: none;
+    }
+    to {
+        transform: scale(1.1);
+    }
 }
 
 .field {
@@ -515,7 +535,25 @@ img {
     height: auto;
 
     object-fit: cover;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 2 / 3;
+
+    opacity: .75;
+    animation: imgAnimation 600ms ease;
+    transition: all 400ms ease;
+}
+
+@keyframes imgAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .75;
+    }
+}
+
+img:hover {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 /* Adds faint background color to alternating sections */
@@ -537,6 +575,21 @@ footer {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+/* Turns hero-grid into a 2 column layout */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.hero-content {
+    grid-column: 1 / 3;
+}
+
+.hero-media {
+    grid-column: 3 / 4;
 }
 
 
@@ -594,9 +647,14 @@ footer {
 
     .stats {
         grid-template-columns: 1fr;
-        gap: 1.25rem;
+        gap: 1.5rem;
 
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+
+    /* Adds vertical space around stats when they are hovered over */
+    .stat:hover {
+        padding: 2rem 0;
     }
 
     .footer-inner {
@@ -630,6 +688,18 @@ footer {
     .container {
         padding-left: 2.5rem;
         padding-right: 2.5rem;
+    }
+
+    /* Makes hero-grid content stack vertically at smaller screen sizes */
+    .hero-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    img {
+        padding-top: .5rem;
+        
+        aspect-ratio: 16 / 9;
     }
 }
 
