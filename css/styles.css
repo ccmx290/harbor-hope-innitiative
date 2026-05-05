@@ -338,6 +338,24 @@ footer p {
     bottom: 1rem;
 }
 
+.eyebrow {
+    font-weight: 600;
+    color: #003569;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.panel {
+    padding: 2rem;
+
+    background-color: #d7e7f7;
+    border-radius: .75rem;
+}
+
 /* Removed flex-wrap to avoid weird wrapping  readjustment issues with the cards, created by the transform and transition */
 .cards,
 .opportunities {
@@ -378,6 +396,25 @@ footer p {
 .card h3,
 .tile h3 {
     margin-top: 0;
+}
+
+.hero-highlights {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    padding-left: 0;
+
+    text-align: center;
+
+    list-style-type: none;
+}
+
+.hero-highlights li {
+    padding: .75rem 1rem;
+
+    background-color: #d7e7f7;
+    border-radius: .25rem;
 }
 
 /* Adds space between the links and ul in the Hero section, and between the donation notes and the form */
@@ -639,6 +676,24 @@ footer {
 
     footer .fineprint {
         margin-bottom: 1rem;
+    }
+
+    .hero-highlights {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 1rem;
+    }
+
+    .hero-highlights li {
+        justify-content: center;
+        align-content: center;
+    }
+
+    .two-col {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .radio-row {
