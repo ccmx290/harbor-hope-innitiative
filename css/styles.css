@@ -92,6 +92,7 @@ h1 {
 /* Added color to h2 headings to add visual interest & make them stand out */
 h2 {
     font-size: 2.5rem;
+
     color: #003569;
 }
 
@@ -119,8 +120,9 @@ p {
 ==================== */
 /* Sets text-decoration to "none" so it can be purposefully reapplied later to only specific links */
 a {
-    color: #0066cc;
     text-decoration: none;
+    
+    color: #0066cc;
 
     transition: all 250ms ease;
 }
@@ -160,8 +162,9 @@ a:not(.hero a, .text-link, .btn-outline):focus-visible {
 }
 
 .brand:focus-visible {
-    color: #003569;
     text-decoration: none;
+
+    color: #003569;
 }
 
 nav a,
@@ -186,12 +189,11 @@ button,
 .btn-outline,
 button {
     padding: .5rem .75rem;
-
-    color: #fff;
+    
     text-align: center;
 
+    color: #fff;
     background-color: #0066cc;
-
     border-radius: .5rem;
 }
 
@@ -213,8 +215,9 @@ button {
 .btn-outline:hover,
 .btn-outline:focus-visible,
 .btn-outline:active {
-    color: #fff;
     text-decoration: none;
+
+    color: #fff;
 
     outline: none;
 }
@@ -276,8 +279,9 @@ footer li:last-of-type {
 }
 
 footer a {
-    color: #fff;
     text-decoration: underline;
+
+    color: #fff;
 }
 
 footer a:active {
@@ -340,6 +344,7 @@ footer p {
 
 .eyebrow {
     font-weight: 600;
+
     color: #003569;
 }
 
@@ -533,7 +538,6 @@ button:focus-visible {
     text-decoration: none;
 
     background-color: #003569;
-
     outline: none;
 
     animation: buttonAnimation 600ms ease;
